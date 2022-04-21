@@ -1,0 +1,21 @@
+body,
+html {
+  scroll-behavior: smooth;
+  /* overflow-x: hidden; */
+}
+/*设置页面加载进度条 */
+#nprogress .bar {
+  top: 70px !important;
+  background: linear-gradient(
+    90deg,
+    $color-peonyPink,
+    #ffcccc,
+    #ff99cc
+  ) !important;
+  // $color-purple
+  height: 4px !important;
+}
+
+#nprogress .peg {
+  display: none !important;
+}
