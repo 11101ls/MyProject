@@ -123,6 +123,7 @@ watch(useRouterCurrent,to=>{
   // margin-bottom: 20px;
   &-navbutton {
     display: grid;
+    text-align: center;
     // grid-template-columns: repeat(6,1fr)
     &-barlist {
       display: grid;
