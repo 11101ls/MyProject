@@ -33,8 +33,8 @@
 <script setup lang="ts">
 import BannerHome from './components/banner/index.vue'
 import {  getCurrentInstance,ComponentInternalInstance} from 'vue'//引入定义的插件
-// import {useTestStore} from '../../store/index'
-import {useTestStore} from '@store/index'
+import {useTestStore} from '../../store/index'
+// import {useTestStore} from 'store/index'
 // import {abx} from '@utils'
 import { storeToRefs } from 'pinia';
 

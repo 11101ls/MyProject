@@ -35,4 +35,7 @@ export default defineConfig({
       }
     }
   },
+  // publicPath: process.env.NODE_ENV === 'production' ? '/vue-admin-web/' : '/' publicPath: process.env.NODE_ENV === 'production'
+  //   ? '/vue-admin-web/'
+  //   : '/'
 })

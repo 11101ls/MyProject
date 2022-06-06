@@ -39,7 +39,7 @@ let activedIndex=ref(null)
 const router=useRouter()
 function toRouter ( name:string, index: any, quit = false ) {
       emit( "ghIndex", index, quit );
-      console.log(name,"-----name");
+
       
       activedIndex = index;
       router.push( { name } );
@@ -54,7 +54,11 @@ function toRouter ( name:string, index: any, quit = false ) {
     display: flex;
   }
   .li-actived {
-    color: $color-purple !important;
+    color: $nadeshiko-pink !important;
+  }
+  .el-icon--right{
+    margin-top: 10%;
   }
 }
+
 </style>

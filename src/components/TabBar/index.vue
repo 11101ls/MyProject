@@ -21,17 +21,6 @@
           />
           <span v-else>{{ item.title }}</span>
         </li>
-
-        <!-- <li><router-link to="/about">关于</router-link></li>
-        <li><router-link to="colorCollection">color</router-link></li>
-        <li></li>
-        <li>
-           <keep-alive>
-          <router-link :to="'/demo/edit/' + id">edit</router-link>
-          </keep-alive>
-        </li>
-        <li><router-link to="/threejs">threejs</router-link></li>
-        <li><router-link to="/cssDemo"> cssDemo</router-link></li>-->
       </ul>
     </div>
   </div>
@@ -79,9 +68,21 @@ let routerLinkList=reactive( [
         },
         {
           index: 4,
-          pathName: "cssDemo",
-          title: "cssDemo",
-          isList: false,
+          pathName: "",
+          title: "Demo",
+          isList: true,
+           list: [
+            {
+              index: 1,
+              pathName: "demo-cssDemo",
+              title: "css",
+            },
+            {
+              index: 2,
+              pathName: "demo-canvas",
+              title: "canvas",
+            },
+          ],
         },
         {
           index: 5,
@@ -131,7 +132,7 @@ watch(useRouterCurrent,to=>{
       align-content: center;
       cursor: pointer;
       & > li:hover {
-        color: $color-purple !important;
+        color: $nadeshiko-pink !important;
       }
       // &_el-dropdown {
       //   color: inherit !important;
@@ -151,7 +152,7 @@ watch(useRouterCurrent,to=>{
     }
   }
   .li-actived {
-    color: $color-purple !important;
+    color: $nadeshiko-pink !important;
   //  .el-dropdown-link {
   //     color: $color-purple !important;
   //   }

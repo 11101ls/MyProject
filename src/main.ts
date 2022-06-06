@@ -10,6 +10,8 @@ import 'nprogress/nprogress.css'; //这个样式必须引入
 import { createPinia, PiniaPluginContext } from 'pinia';
 // 注册插件
 import Loading from './components/loading';
+// 注册组件 preview
+import Preview from './components/preview/index.vue'
 //使用
 const app = createApp(App);
 const store=createPinia()
@@ -74,6 +76,8 @@ const piniaPlugin=(options:Options)=>{
 store.use(piniaPlugin({
   key:"pinia"
 }))
+// 全局组件preview
+app.component('Preview', Preview);
 app.use(Loading);
 app.use(store);
 app.use(ElementPlus);

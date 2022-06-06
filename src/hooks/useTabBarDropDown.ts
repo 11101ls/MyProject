@@ -11,3 +11,4 @@
 //       activedIndex = index;
 //      router.push( { name } );
 //     }
+export { };

@@ -1,6 +1,16 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import NProgress from 'nprogress'; // 进度条
 import 'nprogress/nprogress.css'; //这个样式必须引入
+// *导入modules下的所有路由
+const metaRouters = import.meta.globEager('./modules/*.ts');
+// *处理路由
+export const routerArray: RouteRecordRaw[] = [];
+Object.keys(metaRouters).forEach((item) => {
+  Object.keys(metaRouters[item]).forEach((key) => {
+    routerArray.push(...metaRouters[item][key]);
+  });
+});
+
 const routes=[
   {
     path: '/',
@@ -89,22 +99,15 @@ const routes=[
     component: () => import( '@views/addReimbursement/index.vue'),
 
   },
-  {
-    path: '/cssDemo',
-    name: 'cssDemo',
-    meta: {
-      title: 'cssDemo',
-      index: 4
-    },
-    component: () => import('@/views/cssDemo/index.vue'),
-  },
+  ...routerArray
+
 ]
 const router = createRouter({
   // mode: 'history',
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   // base: process.env.BASE_URL,
   routes,
-  // linkActiveClass: 'router-link', // 统一修改active-class
+  linkActiveClass: 'router-link', // 统一修改active-class
 
 });
 router.beforeEach((to,from,next)=>{

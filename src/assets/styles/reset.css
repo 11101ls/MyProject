@@ -122,15 +122,11 @@ a:active {
   text-decoration: none;
 }
 
-a {
-  color: black;
-}
-
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
