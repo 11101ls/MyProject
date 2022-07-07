@@ -40,7 +40,8 @@ provide("getViewList", getViewList);
 
     <TabBar class="animated fadeIn animate__slower"
             @scrollTop=" scrollTop "></TabBar>
-    <router-view v-slot="{ Component }">
+
+    <router-view v-slot="{ Component }" class="routerview-page">
       <transition enter-active-class="animated fadeIn animate__slower">
         <component :is="Component" />
       </transition>
@@ -87,6 +88,10 @@ provide("getViewList", getViewList);
 // 滚动条高度
 .list {
   height: 100vh !important;
+}
+
+.routerview-page{
+  padding-top: 20px;
 }
 .el-image-viewer__next {
   width: 0 !important;

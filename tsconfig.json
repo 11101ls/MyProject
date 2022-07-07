@@ -12,7 +12,7 @@
     "skipLibCheck": true,
     "lib": ["esnext", "dom"],
     "types": ["vite/client"],
-    "isolatedModules": true
+    "isolatedModules": true,// esbuild 只执行转译不支持特性 取消隔离转译警告
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }],

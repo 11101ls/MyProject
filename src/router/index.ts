@@ -58,19 +58,23 @@ const routes=[
     component: () => import('@views/colorCollection/index.vue'),
 
   },
-  // {
-  //   path: '/resource',
-  //   name: 'resource',
-  //   meta: {
-  //     title: 'resource',
-  //     index: 3
-  //   },
-  //   component: () => import('@views/resource/index.vue'),
-  // },
+  {
+    path: '/resource',
+    name: 'resource',
+    redirect: '',
+    meta: {
+      title: 'resource',
+      index: 3
+    },
+    children: [
+
+    ]
+    // component: () => import('@views/resource/index.vue'),
+  },
   {
     
-    path: '/picture',
-    name: 'picture',
+    path: '/resource/picture',
+    name: 'resource/picture',
     meta: {
       title: 'picture',
       index: 3,
@@ -91,13 +95,20 @@ const routes=[
 
   },
   {
-    path: '/addReimbursement',
-    name: 'addReimbursement', 
+    path: '/resource/documentation',
+    name: 'resource/documentation', 
     meta: {
       index: 3
     },
-    component: () => import( '@views/addReimbursement/index.vue'),
-
+    component: () => import('@views/resource/documentations/index.vue'),
+  },
+  {
+    path: '/resource/books',
+    name: 'resource/books',
+    meta: {
+      index: 3
+    },
+    component: () => import('@views/resource/books/index.vue'),
   },
   ...routerArray
 

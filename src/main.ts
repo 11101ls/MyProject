@@ -2,7 +2,7 @@ import { createApp,toRaw } from 'vue'
 import App from './App.vue'
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
-import '@/assets/styles/index.scss';
+import '@/styles/index.scss';
 import router from './router/index';
 //页面加载进度条
 import NProgress from 'nprogress'; // 进度条

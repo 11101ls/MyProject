@@ -85,7 +85,7 @@ const picViewList: any = inject("getViewList");
 // const getImgNode = (el: any) => {
 //   if (el) {
 
-//     // console.log(el);
+
 
 //   }
 // };
@@ -114,7 +114,7 @@ function waterfallsFlow() {
       item.getElementsByTagName("img")[0].src = src;
       item.style.gridRowEnd = `span ${~~height}`;
       let boxHeight = height + 10;
-      console.log(offheight, h, height);
+      // console.log(offheight, h, height);
       item.style.height = `${boxHeight}px`;
     };
   });
@@ -164,24 +164,29 @@ function getViewList(allList: any, index: any) {
 function closeViewer() {
   // isShowPicView.value=false
 }
+window.addEventListener("resize", (event) => {
+  waterfallsFlow();
+})
 </script>
 
 <style scoped lang='scss'>
 .picture-box {
   min-width: 1024px;
   display: grid;
+
   grid-template-columns: repeat(3, 1fr); // 分为3列
   // grid-gap: 5px;
   // grid-auto-flow: row dense;
   column-gap: 2px;
   .box {
-    border-radius: 15px;
+    // border-radius: 15px;
     border: 5px solid hsla(0, 0%, 100%, 0.5);
     box-sizing: border-box;
     box-shadow: 0 1px 3px rgb(26 26 26 / 10%);
     position: relative;
     transition: all 2s ease;
     padding: 0;
+
     .item {
       object-fit: contain;
       border-radius: 10px;
@@ -200,15 +205,16 @@ function closeViewer() {
       width: 0%;
       height: 0%;
       opacity: 0;
-      transition: all 1s ease;
-      border-radius: 15px;
+      transition: all 2s ease;
+     
     }
 
     &::before {
-      top: -5px;
-      left: -5px;
+      top: -6px;
+      left: -6px;
       border-top: 2px solid $bc-peonyPink;
       border-left: 2px solid $bc-peonyPink;
+     
     }
 
     &::after {
@@ -223,6 +229,7 @@ function closeViewer() {
       opacity: 1;
       width: calc(100% + 9px);
       height: calc(100% + 9px);
+      
     }
     &:hover .item {
       // border-color: #bf3;

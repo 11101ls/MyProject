@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "gen": "node ./script/newComp/index.js"
+    "gen": "node ./script/newComp/index.js",
+    "commit": "git-cz"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -24,6 +25,9 @@
     "@babel/types": "^7.18.4",
     "@types/nprogress": "^0.2.0",
     "@vitejs/plugin-vue": "^2.3.3",
+    "commitizen": "^4.2.4",
+    "conventional-changelog": "^3.1.25",
+    "cz-conventional-changelog": "^3.3.0",
     "fs-extra": "^10.1.0",
     "handlebars": "^4.7.7",
     "inquirer": "^8.2.4",
@@ -31,5 +35,10 @@
     "vite": "^2.9.9",
     "vite-plugin-md": "^0.14.0",
     "vue-tsc": "^0.36.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

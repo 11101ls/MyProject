@@ -23,6 +23,45 @@ html {
 .el-scrollbar__bar {
   opacity: 0;
 }
+
+.borderBox{
+    // margin: 10px auto;
+    // height: 200px;
+    // width: 300px;
+    // border-radius: 15px;
+    //  position: relative;
+    // &::before,
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     width: 20px;
+    //     height: 20px;
+    //     opacity: 0;
+    //      transition: all 1s ease;
+    // }
+    
+    &::before {
+        top: -5px;
+        left: -5px;
+        border-top: 1px solid $bc-peonyPink;
+        border-left: 1px solid $bc-peonyPink;
+    }
+    
+    &::after {
+        
+        right: -5px;
+        bottom: -5px;
+        border-bottom: 1px solid $bc-peonyPink;
+        border-right: 1px solid $bc-peonyPink;
+    }
+    
+    &:hover::before,
+    &:hover::after {
+        opacity: 1;
+        width: calc(100% + 9px);
+        height: calc(100% + 9px);
+    }
+  }
 // .markdown-body{
 //   h2{
 //     display: block;
