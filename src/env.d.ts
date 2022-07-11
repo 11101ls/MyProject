@@ -19,3 +19,12 @@ declare module '*.md' {
   const Component: ComponentOptions;
   export default Component;
 }
+
+interface ImportMetaEnv {
+  readonly VITE_APP_TITLE: string;
+  readonly VITE_APP_BASE_NODE_ENV: string;
+  readonly VITE_APP_BASE_API_URL: string;
+}
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}

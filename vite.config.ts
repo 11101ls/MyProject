@@ -5,20 +5,22 @@
  * @LastEditTime: 2022-05-31 13:42:14
  * @Description: 请填写简介
  */
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue'
 import Markdown from 'vite-plugin-md';
 const path = require('path');
 const _resolve = (dir) => path.join(__dirname, dir);
-export default defineConfig({
-  base: process.env.NODE_ENV === 'production'
+
+export default ({ mode }) => {
+  const env = loadEnv(mode, process.cwd());
+  return defineConfig({
+    base: env.VITE_APP_BASE_NODE_ENV === 'production'
     ? '/MyProject/'
     : './',
   plugins: [vue({ include: [/\.vue$/, /\.md$/] }),
   Markdown(),],
   resolve: {
     alias: {
-
       '@': _resolve('src'),
       '@assets': _resolve('src/assets'),
       '@components': _resolve('src/components'),
@@ -36,8 +38,10 @@ export default defineConfig({
         additionalData: '@import "@/styles/variables.scss";'
       }
     }
-  },
-  // publicPath: process.env.NODE_ENV === 'production' ? '/vue-admin-web/' : '/' publicPath: process.env.NODE_ENV === 'production'
-  //   ? '/vue-admin-web/'
-  //   : '/'
+    },
+
+
 })
+}
+
+

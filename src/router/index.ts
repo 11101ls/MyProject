@@ -123,7 +123,7 @@ const router = createRouter({
 });
 router.beforeEach((to,from,next)=>{
   NProgress.start();
-  document.title = to.matched[0].meta.title as string;
+  // document.title = to.matched[0].meta.title as string;
   // console.log(document,"document");
   
   next();

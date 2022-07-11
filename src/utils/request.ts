@@ -3,7 +3,7 @@ import { showMessage } from "./status";
 import { ElMessage } from 'element-plus'
 // 创建实例
 const service=axios.create({
-  baseURL: 'http://127.0.0.1:3000',
+  baseURL: 'https://www.fastmock.site/mock/3ab53fd47aa02d732d53bea1b4ba3990/api/',
   timeout :60000
 })
 
@@ -39,7 +39,7 @@ service.interceptors.response.use(
 
 
 // 封装 GET POST 请求并导出
-export function request(url = '', params = {}, type = 'POST') {
+export const request = function (url = '', params = {}, type = 'POST') {
   //设置 url params type 的默认值
   return new Promise((resolve, reject) => {
     let promise;

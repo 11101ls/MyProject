@@ -17,6 +17,9 @@ This template should help get you started developing with Vue 3 and Typescript i
 
 Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
 ___
+# 使用环境变量
+    在vite中 变量名以VITE开头 
+    配置文件中需要以函数方式解构出mode  通过loadEnv(mode, process.cwd())获取环境变量文件
 # 使用插件
  ## 使用"vite-plugin-md"将markdown文档转换为组件使用
 
@@ -50,3 +53,7 @@ ___
 
 
  ## 使用prism.js 来修饰markdown代码块
+
+ ## 使用ts封装axios
+
+  

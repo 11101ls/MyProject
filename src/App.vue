@@ -32,6 +32,7 @@ function closeViewer() {
   isShowPicViewList = [];
 }
 provide("getViewList", getViewList);
+document.title=import.meta.env.VITE_APP_TITLE
 </script>
 
 <template>
